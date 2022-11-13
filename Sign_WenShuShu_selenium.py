@@ -51,7 +51,7 @@ b.refresh()
 time.sleep(1)
 
 b.implicitly_wait(10)
-b.find_element(by=By.CLASS_NAME, value="icondaka").click()
+b.find_element(by=By.CLASS_NAME, value="iconfont icondaka").click()
 time.sleep(1)
 
 b.implicitly_wait(10)

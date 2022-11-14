@@ -45,13 +45,8 @@ b.find_element(by=By.XPATH, value='//*[@placeholder="手机号 / 邮箱"]').send
 b.find_element(by=By.XPATH, value='//*[@placeholder="密码"]').send_keys(password)
 b.find_element(by=By.XPATH, value='//*[@type="submit"]').click()
 time.sleep(1)
-
 b.implicitly_wait(10)
-b.refresh()
-time.sleep(1)
-
-b.implicitly_wait(10)
-b.find_element(by=By.XPATH, value='//*[@id="page_content"]/div[1]/div[1]/div[3]/div[2]/i').click()
+b.find_element(by=By.CSS_SELECTOR, value=".icondaka").click()
 time.sleep(1)
 
 b.implicitly_wait(10)

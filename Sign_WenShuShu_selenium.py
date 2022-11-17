@@ -19,7 +19,7 @@ def send(push_token, title, text):
 
 
 user = os.environ.get('USER')
-Print user
+Print (user)
 password = os.environ.get('PASSWORD')
 push_token = os.environ.get('PUSH_MESSAGE')
 

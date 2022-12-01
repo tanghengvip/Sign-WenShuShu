@@ -27,7 +27,7 @@ if user is None:
 if password is None:
     exit()
 if push_token is None:
-    push_token = ""
+    exit()
 
 chrome_options = Options()
 # 浏览器不提供可视化页面. linux下如果系统不支持可视化不加这条会启动失败

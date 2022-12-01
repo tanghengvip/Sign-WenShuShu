@@ -21,7 +21,7 @@ def send(push_token, title, text):
 user = os.environ.get('USER')
 password = os.environ.get('PASSWORD')
 push_token = os.environ.get('PUSH_MESSAGE')
-
+print(push_token)
 if user is None:
     exit()
 if password is None:
@@ -31,7 +31,7 @@ if push_token is None:
 
 chrome_options = Options()
 # 浏览器不提供可视化页面. linux下如果系统不支持可视化不加这条会启动失败
-chrome_options.add_argument('--headless')
+# chrome_options.add_argument('--headless')
 # 以最高权限运行
 chrome_options.add_argument('--no-sandbox')
 chrome_options.add_argument('--disable-dev-shm-usage')
@@ -65,6 +65,6 @@ if ('今日已打卡' in html or '打卡成功' in html):
     send(push_token, '文叔叔签到成功', result)
 else:
     send(push_token, '文叔叔签到失败', html)
+    logger.info("签到失败")
     logger.info(html.encode(encoding='UTF-8', errors='strict'))
-
 b.close()

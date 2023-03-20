@@ -38,7 +38,7 @@ chrome_options.add_argument('--disable-dev-shm-usage')
 b = webdriver.Chrome(executable_path=ChromeDriverManager().install(), options=chrome_options)
 
 b.get('https://www.wenshushu.cn/signin')
-b.implicitly_wait(10)
+b.implicitly_wait(30)
 b.find_element(by=By.XPATH, value='//*[contains(text(),"密码")]').click()
 b.find_element(by=By.XPATH, value='//*[@placeholder="手机号 / 邮箱"]').send_keys(user)
 b.find_element(by=By.XPATH, value='//*[@placeholder="密码"]').send_keys(password)

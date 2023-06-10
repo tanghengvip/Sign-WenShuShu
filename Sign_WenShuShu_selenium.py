@@ -35,6 +35,7 @@ chrome_options.add_argument('--headless')
 # 以最高权限运行
 chrome_options.add_argument('--no-sandbox')
 chrome_options.add_argument('--disable-dev-shm-usage')
+b.implicitly_wait(10)
 b = webdriver.Chrome(executable_path=ChromeDriverManager().install(), options=chrome_options)
 
 b.get('https://www.wenshushu.cn/signin')

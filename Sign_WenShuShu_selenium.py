@@ -64,6 +64,7 @@ if ('今日已打卡' in html or '打卡成功' in html):
         logger.info('%s:%s' % (
             names[i].encode('utf8').decode('unicode_escape'),
             values[i].strip().encode('utf8').decode('unicode_escape')))
+    time.sleep(5)
     print("签到成功"+push_token+result)
     send(push_token, '文叔叔签到成功', result)
 else:

@@ -49,8 +49,6 @@ try:
     time.sleep(1)
 except NoSuchElementException:
     pass
-b.find_element(by=By.CSS_SELECTOR, value=".close-icon").click()
-b.find_element(by=By.CSS_SELECTOR, value=".btn-icon").click()
 b.find_element(by=By.XPATH, value='//*[contains(text(),"密码")]').click()
 b.find_element(by=By.XPATH, value='//*[@placeholder="手机号 / 邮箱"]').send_keys(user)
 b.find_element(by=By.XPATH, value='//*[@placeholder="密码"]').send_keys(password)

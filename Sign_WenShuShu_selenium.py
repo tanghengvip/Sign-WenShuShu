@@ -41,6 +41,16 @@ b = webdriver.Chrome(options=chrome_options)
 
 b.get('https://www.wenshushu.cn/signin')
 b.implicitly_wait(30)
+try:
+    logger.info("关闭广告和新手任务中...")
+    if b.find_element(by=By.CSS_SELECTOR, value=".close-icon"):
+        b.find_element(by=By.CSS_SELECTOR, value=".close-icon").click()
+        b.find_element(by=By.CSS_SELECTOR, value=".btn-icon").click()
+    time.sleep(1)
+except NoSuchElementException:
+    pass
+b.find_element(by=By.CSS_SELECTOR, value=".close-icon").click()
+b.find_element(by=By.CSS_SELECTOR, value=".btn-icon").click()
 b.find_element(by=By.XPATH, value='//*[contains(text(),"密码")]').click()
 b.find_element(by=By.XPATH, value='//*[@placeholder="手机号 / 邮箱"]').send_keys(user)
 b.find_element(by=By.XPATH, value='//*[@placeholder="密码"]').send_keys(password)

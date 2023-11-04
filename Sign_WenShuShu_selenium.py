@@ -47,10 +47,8 @@ try:
         b.find_element(by=By.CSS_SELECTOR, value=".close-icon").click()
         time.sleep(1)
         b.find_element(by=By.CSS_SELECTOR, value=".btn-icon").click()
-        print("已关闭广告")
     time.sleep(1)
 except NoSuchElementException:
-    print("未发现广告")
     pass
 b.find_element(by=By.XPATH, value='//*[contains(text(),"密码")]').click()
 b.find_element(by=By.XPATH, value='//*[@placeholder="手机号 / 邮箱"]').send_keys(user)
